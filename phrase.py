@@ -17,7 +17,5 @@ class Phrase:
         return "The phrase is completely guessed."
         
     def check_guess(self):
-        show_phrase = []
         for i in self.characters:
-            show_phrase.append(i.show())
-        return show_phrase
+            print(i.show(), end=" ")

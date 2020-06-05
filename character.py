@@ -6,8 +6,11 @@ class Character:
             raise ValueError("Please enter a single letter.")
         if not isinstance(character, str):
             raise ValueError("Value must be text, not an integer.")
+        if character == ' ':
+            self.was_guessed = True
+        else:
+            self.was_guessed = was_guessed
         self.character = character
-        self.was_guessed = was_guessed
         
     def __str__(self):
         return "{}".format(str(self.character))
