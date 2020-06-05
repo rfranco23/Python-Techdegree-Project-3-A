@@ -10,7 +10,7 @@ class Phrase:
         self.characters = []
         for character in self.phrase:
             self.characters.append(Character(character))
-        
+            
     def guessed(self):
         if '_' in self.phrase:
             return "The phrase is not completely guessed."

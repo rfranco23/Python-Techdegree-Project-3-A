@@ -9,6 +9,9 @@ class Character:
         self.character = character
         self.was_guessed = was_guessed
         
+    def __str__(self):
+        return "{}".format(str(self.character))
+        
     def char_match(self, guess):
         if guess.lower() == self.character.lower():
             self.was_guessed = True
