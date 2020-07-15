@@ -21,9 +21,9 @@ class Game:
     def __repr__(self):
         return self.phrases
     
-#    def verify_phrase(self, guess):
-#        self.active_phrase.guessed(guess)
-#        return self.active_phrase.check_guess()
+    def verify_phrase(self, guess):
+        self.active_phrase.guessed(guess)
+        return self.active_phrase.check_guess()
 
     def get_letter(self):
         guess_letter = True
@@ -43,7 +43,7 @@ class Game:
         welcome = print("\nWelcome to the Phrase Hunters Challenge!\n")
         phrase = self.active_phrase.characters
         guessed_letters = []
-        check_phrase = self.active_phrase.check_guess()
+        check_phrase = self.verify_phrase('')
         
         while self.lives > 0 and '_' in check_phrase:
             guess = self.get_letter()
