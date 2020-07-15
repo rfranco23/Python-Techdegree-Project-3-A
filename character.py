@@ -5,7 +5,7 @@ class Character:
         if not len(character) == 1:
             raise ValueError("Please enter a single letter.")
         if not isinstance(character, str):
-            raise ValueError("Value must be text, not an integer.")
+            raise ValueError("Value must be a letter, not an integer.")
         if character == ' ':
             self.was_guessed = True
         else:
@@ -13,7 +13,10 @@ class Character:
         self.character = character
         
     def __str__(self):
-        return "{}".format(str(self.character))
+        return self.character
+        
+    def __repr__(self):
+        return self.character
         
     def char_match(self, guess):
         if guess.lower() == self.character.lower():

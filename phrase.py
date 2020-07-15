@@ -11,10 +11,15 @@ class Phrase:
         for character in self.phrase:
             self.characters.append(Character(character))
             
-    def guessed(self):
-        if '_' in self.phrase:
-            return "The phrase is not completely guessed."
-        return "The phrase is completely guessed."
+    def __str__(self):
+        return self.phrase
+    
+    def __repr__(self):
+        return self.phrase
+            
+    def guessed(self, guess):
+        for i in self.characters:
+            i.char_match(guess)
         
     def check_guess(self):
         for i in self.characters:

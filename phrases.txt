@@ -1,10 +1,10 @@
-"Strive for greatness"
-"Cheaters never prosper"
-"Welcome to the thunderdome"
-"Today is Saturday"
-"The best things in life are free"
-"Money does not buy happiness"
-"Learning to code is challenging"
-"Peace be the journey"
-"Dogs have feelings too"
-"School buses are yellow"
+Strive for greatness
+Cheaters never prosper
+Welcome to the thunderdome
+Today is Saturday
+The best things in life are free
+Money does not buy happiness
+Learning to code is challenging
+Peace be the journey
+Dogs have feelings too
+School buses are yellow
