@@ -11,9 +11,6 @@ class Game:
         self.active_phrase = random.choice(self.phrases)
         self.lives = 5
         
-#        self.get_phrase = []
-#        for phrase in self.phrases:
-#            self.get_phrase.append(Phrase(phrase))
 
     def __str__(self):
         return self.phrases
@@ -24,7 +21,7 @@ class Game:
     def verify_phrase(self, guess):
         self.active_phrase.guessed(guess)
         return self.active_phrase.check_guess()
-
+        
     def get_letter(self):
         guess_letter = True
         
@@ -43,7 +40,12 @@ class Game:
         welcome = print("\nWelcome to the Phrase Hunters Challenge!\n")
         phrase = self.active_phrase.characters
         guessed_letters = []
+        show_phrase = self.active_phrase.show_guess()
         check_phrase = self.verify_phrase('')
         
         while self.lives > 0 and '_' in check_phrase:
             guess = self.get_letter()
+            if guess in phrase and guess not in guessed_letters:
+                guessed_letters.append(guess)
+#                return self.verify_phrase(guess)
+            break

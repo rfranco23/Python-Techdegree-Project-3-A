@@ -22,5 +22,14 @@ class Phrase:
             i.char_match(guess)
         
     def check_guess(self):
+        current_phrase = []
         for i in self.characters:
-            print(i.show(), end=" ")
+            current_phrase.append(i.show())
+#            print(i.show(), end=" ")
+#        print('\n')
+        return current_phrase
+
+    def show_guess(self):
+        for i in self.characters:
+            print(i.show(), end= " ")
+        print('\n')
