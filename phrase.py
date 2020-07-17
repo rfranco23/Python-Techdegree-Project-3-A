@@ -25,8 +25,6 @@ class Phrase:
         current_phrase = []
         for i in self.characters:
             current_phrase.append(i.show())
-#            print(i.show(), end=" ")
-#        print('\n')
         return current_phrase
 
     def show_guess(self):

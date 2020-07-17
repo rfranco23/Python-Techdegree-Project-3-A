@@ -1,6 +1,7 @@
 import random
 
 from phrase import Phrase
+#from character import Character
 
 
 # Create your Game class logic in here.
@@ -39,13 +40,24 @@ class Game:
     def start_game(self):
         welcome = print("\nWelcome to the Phrase Hunters Challenge!\n")
         phrase = self.active_phrase.characters
-        guessed_letters = []
         show_phrase = self.active_phrase.show_guess()
-        check_phrase = self.verify_phrase('')
+        self.verify_phrase('')
         
-        while self.lives > 0 and '_' in check_phrase:
-            guess = self.get_letter()
-            if guess in phrase and guess not in guessed_letters:
-                guessed_letters.append(guess)
-#                return self.verify_phrase(guess)
-            break
+        for char in phrase:
+            if char.was_guessed == False and self.lives > 0:
+                guess = self.get_letter()
+                check_guess = self.verify_phrase(guess)
+                print('\n')
+                if guess not in phrase:
+                    self.lives -= 1
+                    print("You have {} out of 5 lives remaining!\n".format(self.lives))
+            self.active_phrase.show_guess()
+                    
+        
+#        while self.lives > 0:
+#            for char in phrase:
+#                if char.was_guessed == False:
+#                    guess = self.get_letter()
+#                    self.verify_phrase(guess)
+#            self.active_phrase.show_guess()
+#            break
