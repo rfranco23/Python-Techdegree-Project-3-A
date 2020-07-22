@@ -11,6 +11,7 @@ class Character:
         else:
             self.was_guessed = was_guessed
         self.character = character
+        self.already_guessed = []
         
     def __str__(self):
         return self.character
@@ -19,11 +20,15 @@ class Character:
         return self.character
         
     def char_match(self, guess):
-        if guess.lower() == self.character.lower():
+        self.already_guessed.append(guess)
+        if guess.lower() != self.character.lower():
+            return self.was_guessed
+        else:
             self.was_guessed = True
+        return self.was_guessed
         
     def show(self):
         if self.was_guessed == True:
             return self.character   
         return '_'
-       
+    
