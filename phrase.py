@@ -10,14 +10,15 @@ class Phrase:
         for letter in phrase:
             self.phrase.append(Character(letter))
             
-    def guess_letter(self, guess):
+    def guessed(self, guess):
         for i in self.phrase:
             i.char_match(guess)
             
-#    def guess_letter(self, guess):
-#        if guess.lower() in self.phrase:
-#            return True
-#        return False
+    def letter_in_phrase(self, guess):
+        for guess in self.phrase:
+            if guess.was_guessed == False:
+                return False
+        return True
 
     def phrase_complete(self):
         for char in self.phrase:

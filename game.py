@@ -24,20 +24,22 @@ class Game:
                 return guess.lower()
             except ValueError:
                 print('Please select a single letter.')
-    
+                
+#    def verify_phrase(self, guess):
+#        self.active_phrase.guess_letter(guess)
+        
     def start_game(self):
         welcome = print("\nWelcome to the Phrase Hunters Challenge!\n")
-        phrase = self.active_phrase
-        phrase.show_guess()
+        self.active_phrase.show_guess()
         
         while self.lives > 0 and not self.active_phrase.phrase_complete():
             guess = self.get_letter()
-            hit = phrase.guess_letter(guess)
+            self.active_phrase.guessed(guess)
+            self.active_phrase.letter_in_phrase(guess)
             print('\n')
-            if hit == True:
-                phrase.show_guess()
-#            if hit != True:
-#                self.lives -= 1
-#                print("You have {} out of 5 lives remaining!\n".format(self.lives))
-#            phrase.show_guess()
+            if not self.active_phrase.letter_in_phrase(guess):
+                self.lives -= 1
+                print("You have {} out of 5 lives remaining!\n".format(self.lives))
+            self.active_phrase.show_guess()
+#            break
                     

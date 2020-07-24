@@ -1,7 +1,7 @@
 # Create your Character class logic in here.
 class Character:
     
-    def __init__(self, character, was_guessed=False):
+    def __init__(self, character):
         if not len(character) == 1:
             raise ValueError("Please enter a single letter.")
         if not isinstance(character, str):
@@ -9,7 +9,7 @@ class Character:
         if character == ' ':
             self.was_guessed = True
         else:
-            self.was_guessed = was_guessed
+            self.was_guessed = False
         self.character = character
         
     def __str__(self):
@@ -26,7 +26,7 @@ class Character:
         return self.was_guessed
         
     def show(self):
-        if self.was_guessed == True:
-            return self.character   
+        if self.was_guessed:
+            return self.character.lower()   
         return '_'
     
