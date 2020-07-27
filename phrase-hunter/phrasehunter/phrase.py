@@ -1,7 +1,6 @@
-from character import Character
+from .character import Character
 
 
-# Create your Phrase class logic here.
 class Phrase:
     
     def __init__(self, phrase):
@@ -15,10 +14,10 @@ class Phrase:
             i.char_match(guess)
             
     def letter_in_phrase(self, guess):
-        for guess in self.phrase:
-            if guess.was_guessed == False:
-                return False
-        return True
+        for letter in self.phrase:
+            if letter.character.lower() == guess.lower():
+                return True
+        return False
 
     def phrase_complete(self):
         for char in self.phrase:
